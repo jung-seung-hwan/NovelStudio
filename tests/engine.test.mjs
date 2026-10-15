@@ -1,0 +1,8 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {analyze,imageFor,validateProject} from '../dist/engine.js';
+const characters=[{id:'y',name:'유나',aliases:'붉은 기사',description:'',skills:'불꽃 검격'}];
+test('new chapters reuse identities and infer paragraph state',()=>{const s=analyze('붉은 기사는 분노했다.\n\n유나는 상처를 감쌌다.',characters);assert.equal(s.length,2);assert.equal(s[0].characterId,'y');assert.equal(s[0].emotion,'분노');assert.equal(s[1].condition,'부상');});
+test('reanalysis preserves edits and handles repeated paragraphs independently',()=>{const old=analyze('유나는 웃었다.\n\n유나는 웃었다.',characters);old[0].emotion='슬픔';old[0].locked=true;old[1].skill='불꽃 검격';const next=analyze('유나는 웃었다.\n\n유나는 웃었다.\n\n유나는 분노했다.',characters,old);assert.equal(next[0].emotion,'슬픔');assert.equal(next[1].skill,'불꽃 검격');assert.notEqual(next[0].id,next[1].id);assert.equal(next[2].emotion,'분노');});
+test('images prefer exact emotion then default without crossing characters',()=>{const base={kind:'character',characterId:'y',emotion:'기본'},angry={...base,emotion:'분노'};assert.equal(imageFor([base,angry],{characterId:'y',emotion:'분노'}),angry);assert.equal(imageFor([base,angry],{characterId:'y',emotion:'슬픔'}),base);assert.equal(imageFor([base],{characterId:'z',emotion:'기본'}),undefined);});
+test('import rejects malformed projects and executable image URLs',()=>{const p={version:1,title:'test',characters,chapters:[{id:'c',title:'1',text:'유나',scenes:analyze('유나',characters)}],assets:[]};assert.equal(validateProject(p),p);assert.throws(()=>validateProject({...p,chapters:[]}));assert.throws(()=>validateProject({...p,assets:[{id:'a',name:'x',kind:'character',characterId:'y',emotion:'기본',data:'javascript:alert(1)'}]}));});

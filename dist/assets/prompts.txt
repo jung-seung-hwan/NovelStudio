@@ -1,0 +1,17 @@
+Novel Studio sample artwork — built-in image_gen, 2026-10-14
+
+Style: illustration-story; detailed painterly Korean fantasy webnovel art, elegant anatomy, consistent character identity, no words or watermark.
+
+yuna-neutral.png: Adult female fantasy swordswoman Yuna, long dark auburn ponytail, amber eyes, charcoal tunic, silver shoulder armor, burgundy cape, leather belt, sheathed sword. Calm resolute neutral expression. Centered knees-up 2:3 portrait, subtle lavender rim light, transparent background.
+
+yuna-happy.png: Edit Yuna reference; preserve identity, outfit, framing and pose. Change only expression to a gentle warm hopeful smile toward a trusted companion, relaxed eyebrows. Transparent background.
+
+yuna-flame.png: Use Yuna identity reference; protective anger with furrowed eyebrows and intense eyes. Drawn sword angled diagonally downward, controlled red-orange magical flame along blade and small sparks. Same outfit, portrait framing and painterly style. Transparent background.
+
+sion-neutral.png: Adult male fantasy traveler Sion, age 25, short tousled blue-black hair, slate blue eyes, gentle lean face. Dark teal hooded cloak with hood down, cream shirt, brown leather bracers, cross-body satchel, silver circular clasp. Calm attentive expression, relaxed hands, three-quarter knees-up portrait. Transparent background.
+
+sion-fear.png: Edit Sion reference; preserve face, hair, costume and framing. Frightened expression, raised inner eyebrows, widened eyes looking toward danger. Left hand grips injured right forearm with clean bandage over torn sleeve. Guarded tense pose, non-graphic injury without blood. Transparent background.
+
+forest-mist.png: Landscape 3:2 visual-novel environment, ancient misty forest entrance at blue hour. Gnarled trees arch over mossy stone path into silvery fog, small blue magical lights, ferns, damp roots. Deep teal and muted lavender, atmospheric painterly detail. Empty environment, open low-detail center for character overlay. Opaque background.
+
+Local source artwork, not published. Character art is PNG RGBA; forest is PNG RGB. Names, clothing and expressions are original sample-story interpretations, editable by the user.

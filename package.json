@@ -1,0 +1,1 @@
+{"name":"novel-studio","private":true,"version":"0.1.0","type":"module","scripts":{"start":"node server.mjs","check":"node --check dist/app.js && node --check dist/engine.js && node --check dist/sample-pack.js","test":"node --test tests/engine.test.mjs tests/sample-pack.test.mjs"}}
